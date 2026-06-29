@@ -1,0 +1,152 @@
+/* FORCE DARK THEME */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  background: #050505 !important;
+  color: white !important;
+  min-height: 100vh;
+}
+
+body {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  overflow-x: hidden;
+}
+
+/* MESH BACKGROUND */
+.mesh-bg {
+  position: relative;
+  background: #050505 !important;
+  min-height: 100vh;
+}
+
+.mesh-bg::before {
+  content: '' !important;
+  position: fixed !important;
+  width: 600px !important;
+  height: 600px !important;
+  background: radial-gradient(circle, #7c3aed 0%, transparent 70%) !important;
+  top: -250px !important;
+  left: -200px !important;
+  opacity: 0.3 !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+}
+
+.mesh-bg::after {
+  content: '' !important;
+  position: fixed !important;
+  width: 600px !important;
+  height: 600px !important;
+  background: radial-gradient(circle, #2563eb 0%, transparent 70%) !important;
+  bottom: -250px !important;
+  right: -200px !important;
+  opacity: 0.3 !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+}
+
+/* ENSURE CONTENT IS ABOVE BACKGROUND */
+header, section, footer, nav, div {
+  position: relative;
+  z-index: 1;
+}
+
+/* GLASS EFFECT */
+.glass {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* GLASS BUTTON */
+.glass-btn {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: white !important;
+  transition: all 0.3s ease !important;
+  cursor: pointer;
+}
+
+.glass-btn:hover {
+  transform: scale(1.05) !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.4) !important;
+}
+
+/* HERO TITLE GRADIENT */
+.hero-title {
+  background: linear-gradient(135deg, #ffffff 0%, #c084fc 50%, #60a5fa 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+/* TEXT COLORS */
+h1, h2, h3, h4, h5, h6, p, a, span, div {
+  color: inherit;
+}
+
+a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #c084fc;
+}
+
+/* CREDIT LINK */
+.credit-link {
+  color: #c084fc;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.credit-link:hover {
+  color: #a855f7;
+  text-decoration: underline;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 10px;
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* INPUT STYLES */
+input, textarea {
+  color: white !important;
+}
+
+input::placeholder, textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* MOBILE MENU */
+#mobileMenu {
+  backdrop-filter: blur(20px);
+}
