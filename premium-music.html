@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" style="background: #050505;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Store | DJ Tharusha</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="mesh-bg" style="background: #050505; color: white;">
+
+  <!-- HEADER -->
+  <header class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl">
+    <nav class="glass rounded-2xl px-6 py-4 flex items-center justify-between">
+
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="assets/images/logo.jpeg" 
+             class="w-12 h-12 rounded-full object-cover"
+             alt="DJ Tharusha Logo">
+
+        <div>
+          <h1 class="font-black text-lg text-white">DJ THARUSHA</h1>
+          <p class="text-xs text-white/50">Premium Music Experience</p>
+        </div>
+      </a>
+
+      <div class="hidden md:flex items-center gap-8 text-white">
+        <a href="index.html">Home</a>
+        <a href="free-music.html">Free Music</a>
+        <a href="premium-music.html" class="text-purple-400">Premium Store</a>
+        <a href="contact.html">Contact</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+
+      <button id="menuBtn" class="md:hidden glass-btn p-3 rounded-xl">
+        <i data-lucide="menu"></i>
+      </button>
+    </nav>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div id="mobileMenu" class="fixed top-0 right-[-100%] w-72 h-full glass z-50 p-6 transition-all duration-500">
+    <div class="flex justify-between items-center mb-10">
+      <h2 class="text-2xl font-black text-white">Menu</h2>
+      <button id="closeMenu">
+        <i data-lucide="x"></i>
+      </button>
+    </div>
+
+    <div class="flex flex-col gap-6 text-white">
+      <a href="index.html">Home</a>
+      <a href="free-music.html">Free Music</a>
+      <a href="premium-music.html" class="text-purple-400">Premium Store</a>
+      <a href="contact.html">Contact</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+  </div>
+
+  <section class="pt-40 px-6 pb-20">
+    <div class="max-w-7xl mx-auto">
+
+      <h1 class="text-5xl font-black text-center mb-16 text-white">Premium Music Store</h1>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <div onclick="openModal()" 
+             class="glass rounded-[2rem] overflow-hidden cursor-pointer hover:scale-[1.02] transition-all">
+          <img src="assets/images/pack sales/140 PVT 01.png"
+               class="w-full h-72 object-cover">
+
+          <div class="p-6">
+            <h3 class="text-2xl font-black mb-3 text-white">140 PVT PACK SALE</h3>
+            <p class="text-white/60 mb-5">
+              Professional DJ edits and transitions.
+            </p>
+            <button class="glass-btn w-full py-3 rounded-2xl">
+              View Details
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MODAL -->
+  <div id="premiumModal" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50 p-4" style="backdrop-filter: blur(10px);">
+    <div class="glass rounded-[2rem] max-w-5xl w-full overflow-hidden">
+
+      <div class="grid lg:grid-cols-2">
+
+        <img src="assets/images/pack sales/140 PVT 01.png"
+             class="w-full h-full object-cover min-h-[500px]">
+
+        <div class="p-8 overflow-y-auto max-h-[90vh]">
+
+          <div class="flex justify-between items-center mb-8">
+            <h2 class="text-4xl font-black text-white">140 PVT PACK SALE</h2>
+            <button onclick="closeModal()" class="glass-btn p-3 rounded-2xl">
+              <i data-lucide="x"></i>
+            </button>
+          </div>
+
+          <p class="text-white/60 leading-relaxed mb-8">
+            Premium DJ edits, intros, transitions and remix tools.
+          </p>
+
+          <audio controls class="w-full mb-8">
+            <source src="assets/music/sampel/140 PVT SALE PACK 140  (DJ THARUSHA) .mp3.mpeg" type="audio/mpeg">
+          </audio>
+
+          <a href="https://wa.me/94770000000" target="_blank"
+             class="bg-green-500/20 border border-green-500/20 hover:bg-green-500/40 transition-all block text-center py-4 rounded-2xl font-bold mb-10 text-white">
+            Buy Via WhatsApp
+          </a>
+
+          <div>
+            <h3 class="text-3xl font-black mb-6 text-white">Customer Comments</h3>
+
+            <form id="commentForm" class="space-y-4 mb-8">
+              <input type="text" id="displayName" placeholder="Display Name"
+                     class="w-full glass p-4 rounded-2xl bg-transparent text-white">
+
+              <textarea id="commentText" rows="4" placeholder="Write review..."
+                        class="w-full glass p-4 rounded-2xl bg-transparent text-white"></textarea>
+
+              <button type="submit" class="glass-btn px-6 py-3 rounded-2xl">
+                Post Comment
+              </button>
+            </form>
+
+            <div id="commentsContainer" class="space-y-5"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="px-6 pb-10">
+    <div class="max-w-7xl mx-auto glass rounded-[2rem] p-10">
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+
+        <div>
+          <h3 class="text-2xl font-black mb-4 text-white">DJ THARUSHA</h3>
+          <p class="text-white/60 leading-relaxed mb-3">
+            Futuristic remix experiences and premium DJ content.
+          </p>
+          <p class="text-white/40 text-sm">
+            Made by <a href="https://induwaradeshan.vercel.app" target="_blank" class="credit-link">Induwara Deshan</a>
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-lg mb-4 text-white">Quick Links</h4>
+          <div class="space-y-3 text-white/60">
+            <a href="index.html" class="block hover:text-purple-400 transition-colors">Home</a>
+            <a href="free-music.html" class="block hover:text-purple-400 transition-colors">Free Music</a>
+            <a href="premium-music.html" class="block hover:text-purple-400 transition-colors">Premium Store</a>
+            <a href="contact.html" class="block hover:text-purple-400 transition-colors">Contact</a>
+            <a href="faq.html" class="block hover:text-purple-400 transition-colors">FAQ</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-lg mb-4 text-white">Socials</h4>
+          <div class="flex gap-4">
+            <a href="https://instagram.com" target="_blank" class="glass-btn p-3 rounded-xl hover:scale-110 transition-transform">
+              <i data-lucide="instagram" class="w-5 h-5"></i>
+            </a>
+
+            <a href="https://youtube.com" target="_blank" class="glass-btn p-3 rounded-xl hover:scale-110 transition-transform">
+              <i data-lucide="youtube" class="w-5 h-5"></i>
+            </a>
+
+            <a href="https://soundcloud.com" target="_blank" class="glass-btn p-3 rounded-xl hover:scale-110 transition-transform">
+              <i data-lucide="music-2" class="w-5 h-5"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-lg mb-4 text-white">Direct Contact</h4>
+          <a href="tel:+94770000000" class="glass-btn inline-flex items-center gap-3 px-5 py-3 rounded-2xl">
+            <i data-lucide="phone-call" class="w-5 h-5"></i>
+            <span>Call Now</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="border-t border-white/10 mt-10 pt-6 text-center text-white/40 text-sm">
+        © 2026 DJ Tharusha. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
